@@ -1,32 +1,28 @@
-<svelte:head>
-	<title>Canvas</title>
-	<meta name="description" content="Canvas Playground" />
-</svelte:head>
-
 <script lang="ts">
-import { mandelbrot } from './feats';
-	import type {MandelbrotProps} from './feats';
+	import { mandelbrot } from './feats';
+	import type { MandelbrotProps } from './feats';
 
 	let scale = 1;
 	let offset = {
-		x:-0.6,
-		y: 0,
-	}
+		x: -0.6,
+		y: 0
+	};
 
 	let increaseScaleTimer: NodeJS.Timeout | null = null;
 	let linearGradient = 300;
 
 	function isEnough() {
-		return (linearGradient < 50) 	// if gradient is greater than 100, return true -> continue
+		return linearGradient < 50; // if gradient is greater than 100, return true -> continue
 	}
 
 	function scaleUp(dx: number = 1) {
-		if(increaseScaleTimer) {	// if timer is running, increase gradient
-			if(!isEnough()) {
+		if (increaseScaleTimer) {
+			// if timer is running, increase gradient
+			if (!isEnough()) {
 				clearInterval(increaseScaleTimer);
 				return setupTimer(dx);
 			}
-		}	// else, start timer
+		} // else, start timer
 		return setupTimer(dx);
 	}
 
@@ -35,7 +31,7 @@ import { mandelbrot } from './feats';
 			const gradient = linearGradient < 100 ? 0.5 : 0.1;
 			scale += gradient * dx;
 
-			if(increaseScaleTimer && !isEnough()) {
+			if (increaseScaleTimer && !isEnough()) {
 				linearGradient -= 30;
 				clearInterval(increaseScaleTimer);
 				return setupTimer(dx);
@@ -44,10 +40,10 @@ import { mandelbrot } from './feats';
 	}
 
 	function resetTimer() {
-		if(increaseScaleTimer) {
+		if (increaseScaleTimer) {
 			clearInterval(increaseScaleTimer);
 			increaseScaleTimer = null;
-			return linearGradient = 300;
+			return (linearGradient = 300);
 		}
 		return;
 	}
@@ -63,7 +59,7 @@ import { mandelbrot } from './feats';
 	function drawMandelbrot(event: MouseEvent) {
 		const canvas = document.getElementById('canvas') as HTMLCanvasElement;
 
-		offset.x += (2 * event.offsetX / canvas.width - 1) / scale;
+		offset.x += ((2 * event.offsetX) / canvas.width - 1) / scale;
 		offset.y += (2 * event.offsetY - canvas.height) / scale / canvas.width;
 
 		const props = {
@@ -71,16 +67,20 @@ import { mandelbrot } from './feats';
 			offset,
 			scale,
 			maxIterations: 50
-		}satisfies MandelbrotProps;
+		} satisfies MandelbrotProps;
 
 		mandelbrot(props);
 	}
-
 </script>
+
+<svelte:head>
+	<title>Canvas</title>
+	<meta name="description" content="Canvas Playground" />
+</svelte:head>
 
 <div class="text-column">
 	<h1>About Mandelbrot</h1>
-	<canvas on:click={drawMandelbrot} id="canvas" width="800" height="640"/>
+	<canvas on:click={drawMandelbrot} id="canvas" width="800" height="640" />
 	<div class="box-status">
 		<p>Offset: {offset.x}, {offset.y}</p>
 		<p>Scale: {Number(scale).toFixed(2)}</p>
@@ -91,7 +91,6 @@ import { mandelbrot } from './feats';
 		<button on:mousedown={decreaseScale} on:mouseleave={resetTimer}>Scale Down</button>
 		<button on:click={resetTimer}>Reset</button>
 	</div>
-
 </div>
 
 <style>
@@ -110,5 +109,4 @@ import { mandelbrot } from './feats';
 		flex-direction: row;
 		gap: 1rem;
 	}
-
 </style>
