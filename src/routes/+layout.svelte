@@ -1,5 +1,6 @@
 <script>
 	import Header from './Header.svelte';
+	import "../app.css";
 	import './styles.css';
 </script>
 
@@ -11,7 +12,7 @@
 	</main>
 
 	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
+		<p>Take A Look My Workspace Here <q><a href="https://github.com/ShinMini">ShinMini</a></q> to Touch Me!</p>
 	</footer>
 </div>
 
@@ -50,4 +51,5 @@
 			padding: 12px 0;
 		}
 	}
+
 </style>

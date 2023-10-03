@@ -1,5 +1,5 @@
 <script>
-	import Counter from './Counter.svelte';
+	import Notion from './docs/notion/Notion.svelte';
 	import welcome from '$lib/images/svelte-welcome.webp';
 	import welcome_fallback from '$lib/images/svelte-welcome.png';
 </script>
@@ -10,25 +10,27 @@
 </svelte:head>
 
 <section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" />
-			</picture>
-		</span>
-
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
-
-	<Counter />
+	<span class="welcome">
+		<picture>
+			<source srcset={welcome} type="image/webp" />
+			<img src={welcome_fallback} alt="Welcome" />
+		</picture>
+	</span>
+	<Notion />
 </section>
 
 <style>
+	span,
+	picture,
+	source,
+	img,
+	h2,
+	strong,
+	section {
+		margin: 0;
+		padding: 0;
+	}
+
 	section {
 		display: flex;
 		flex-direction: column;
@@ -38,9 +40,9 @@
 	}
 
 	h1 {
+		margin: 0;
 		width: 100%;
 	}
-
 	.welcome {
 		display: block;
 		position: relative;
@@ -51,9 +53,9 @@
 
 	.welcome img {
 		position: absolute;
+		object-fit: contain;
 		width: 100%;
 		height: 100%;
-		top: 0;
 		display: block;
 	}
 </style>
