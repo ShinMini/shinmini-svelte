@@ -56,9 +56,6 @@
 
 	<li><h4><a href="docs/notion/BE/nestjs">Nest js</a></h4></li>
 
-	<!-- Introduction By ShinMini -->
-	<li><h2><a href="docs/notion/whoami">whoami</a></h2></li>
-
 	<!-- Machine Learning -->
 	<li>
 		<h2><a href="docs/notion/ML">머신러닝</a></h2>

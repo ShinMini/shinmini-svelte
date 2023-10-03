@@ -89,46 +89,6 @@
 			padding: 0;
 		}
 	}
-	.page {
-		&-header-icon {
-			.icon {
-				width: 1.5rem;
-				height: 1.5rem;
-				margin-right: 0.5rem;
-				vertical-align: middle;
-			}
-		}
-		&-title {
-			font-size: 1.5rem;
-			font-weight: 700;
-			margin: 0;
-			padding: 0;
-		}
-		&-description {
-			font-size: 1rem;
-			font-weight: 400;
-			margin: 0;
-			padding: 0;
-		}
-		&-body {
-			& > * {
-				margin: 0;
-				padding: 0;
-			}
-			& > * + * {
-				margin-top: 1rem;
-			}
-			&-content {
-				& > * {
-					margin: 0;
-					padding: 0;
-				}
-				& > * + * {
-					margin-top: 1rem;
-				}
-			}
-		}
-	}
 	.link-to-page {
 		& > a {
 			display: flex;

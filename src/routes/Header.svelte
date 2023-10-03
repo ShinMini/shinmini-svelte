@@ -1,13 +1,13 @@
 <script>
 	import { page } from '$app/stores';
-	import logo from '$lib/icons/logo.svg';
-	import github from '$lib/images/github.svg';
+	import avocado from '$lib/icons/avocado.png';
+	import shinmini from '$lib/icons/logo.svg';
 </script>
 
 <header>
 	<div class="corner">
 		<a href="/">
-			<img src={logo} alt="SvelteKit" />
+			<img src={avocado} alt="go to home" />
 		</a>
 	</div>
 
@@ -19,17 +19,11 @@
 			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
 				<a href="/">Home</a>
 			</li>
-			<!-- <li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
-				<a href="/about">About</a>
-			</li> -->
-			<!-- <li aria-current={$page.url.pathname === '/docs' ? 'page' : undefined}>
-				<a href="/docs">Docs</a>
-			</li> -->
-			<li aria-current={$page.url.pathname === '/mandelbrot' ? 'page' : undefined}>
+			<!-- <li aria-current={$page.url.pathname === '/mandelbrot' ? 'page' : undefined}>
 				<a href="/mandelbrot">Mandelbrot</a>
-			</li>
-			<li aria-current={$page.url.pathname.startsWith('/sverdle') ? 'page' : undefined}>
-				<a href="/sverdle">Sverdle</a>
+			</li> -->
+			<li aria-current={$page.url.pathname === '/docs' ? 'page' : undefined}>
+				<a href="/docs">Docs</a>
 			</li>
 		</ul>
 		<svg viewBox="0 0 2 3" aria-hidden="true">
@@ -38,8 +32,8 @@
 	</nav>
 
 	<div class="corner">
-		<a href="https://github.com/ShinMini" target="_blank">
-			<img src={github} alt="GitHub" />
+		<a href="https://shinmini.com">
+			<img src={shinmini} alt="shinmini-website" />
 		</a>
 	</div>
 </header>
