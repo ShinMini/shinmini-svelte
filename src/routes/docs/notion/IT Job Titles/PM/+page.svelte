@@ -1,7 +1,7 @@
 <article id="9865a9d8-76bf-4361-84dc-8b09db99f870" class="page sans">
 	<header>
 		<div class="page-header-icon undefined">
-			<img class="icon" src="https://www.notion.so/icons/branch-fork_green.svg" />
+			<img class="icon" alt="fork-green" src="https://www.notion.so/icons/branch-fork_green.svg" />
 		</div>
 		<h1 class="page-title">PM</h1>
 		<p class="page-description" />

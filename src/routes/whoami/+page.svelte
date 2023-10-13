@@ -42,7 +42,7 @@
 			</h1>
 			<br />
 			<p>
-				<strong> <mark class="highlight-gray"><a href="https://github.com/ShinMini">Github</a></mark></strong>
+				<strong><mark class="highlight-gray"><a href="https://github.com/ShinMini">Github</a></mark></strong>
 			</p>
 			<p class="">
 				<strong><mark class="highlight-blue"><a href="https://www.linkedin.com/in/shinmini/">LinkedIn</a></mark></strong>

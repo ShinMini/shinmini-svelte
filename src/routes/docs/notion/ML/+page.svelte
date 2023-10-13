@@ -1,3 +1,8 @@
+<script>
+	import Tensorflow from './Tensorflow/+page.svelte';
+	import ChatGPT from './ChatGPT/+page.svelte';
+</script>
+
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>머신러닝</title>
 </head>
@@ -11,11 +16,11 @@
 		<div class="page-body">
 			<p />
 			<figure class="link-to-page">
-				<a href="ML/Tensorflow"><span class="icon">🦁</span>About Tensorflow</a>
+				<Tensorflow />
 			</figure>
 			<p />
 			<figure class="link-to-page">
-				<a href="ML/ChatGPT"><span class="icon">🐸</span>About ChatGPT</a>
+				<ChatGPT />
 			</figure>
 			<p />
 		</div>
