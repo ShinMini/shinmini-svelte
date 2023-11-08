@@ -1,31 +1,40 @@
 <script>
 	import Header from './Header.svelte';
+	import Footer from './Footer.svelte';
+
+	import "../app.css";
 	import './styles.css';
 	import '$lib/fonts/fonts.css';
+	
+	import '../i18n';
+	import {locale, isLoading} from 'svelte-i18n';
+
+	locale.set('ko')
+	locale.subscribe(() => console.log('locale change'))
 </script>
+
+{#if $isLoading}
+<div class="w-full h-full bg-zinc-800 justify-center align-center">
+	<h1 class="text-4xl font-bold text-center text-title-cool w-full h-full m-auto">Please wait...</h1>
+</div>
+{:else}
 
 <div class="app">
 	<Header />
-
 	<main>
 		<slot />
 	</main>
-
-	<footer >
-		<div >
-			<p>GitHub</p>
-			<p>Instagram</p>
-			<p>Youtube</p>
-		</div>
-		<p>© 2023 made by ShinMini, in Korea</p>
-	</footer>
+	<Footer />
 </div>
+{/if}
+
 
 <style>
 	.app {
 		display: flex;
 		flex-direction: column;
-		height: 100vh;
+		justify-content: space-between;
+		min-height: 100vh;
 		background-color: #222222;
 	}
 
@@ -40,28 +49,4 @@
 		box-sizing: border-box;
 	}
 
-	footer {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		box-sizing: content-box;
-		padding: clamp(12px, 1.2vw, 24px) clamp(24px, 2.4vw, 48px);
-
-		border-top: 2px solid #333;
-		color: rgba(255, 255, 255, 0.80);
-
-		font-family: Poppins;
-		font-size: clamp(8px, 1.2vw, 16px);
-		font-style: normal;
-		font-weight: 400;
-		line-height: 35px; /* 218.75% */
-	}
-
-	footer div {
-		display: flex;
-		gap: 6px;
-		font-weight: bold;
-
-		color: rgba(255, 255, 255, 0.50);
-	}
 </style>

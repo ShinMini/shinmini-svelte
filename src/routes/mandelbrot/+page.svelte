@@ -79,14 +79,14 @@ import { mandelbrot } from './feats';
 </script>
 
 <div class="text-column">
-	<h1>About Mandelbrot</h1>
+	<h1 class="text-2xl poppins text-slate-200 font-bold">Click Me!</h1>
 	<canvas on:click={drawMandelbrot} id="canvas" width="800" height="640"/>
-	<div class="box-status">
+	<div class="box-status text-slate-400">
 		<p>Offset: {offset.x}, {offset.y}</p>
 		<p>Scale: {Number(scale).toFixed(2)}</p>
 	</div>
 
-	<div class="box-container">
+	<div class="box-container text-slate-400">
 		<button on:mousedown={increaseScale} on:mouseleave={resetTimer}>Scale Up</button>
 		<button on:mousedown={decreaseScale} on:mouseleave={resetTimer}>Scale Down</button>
 		<button on:click={resetTimer}>Reset</button>
@@ -97,6 +97,8 @@ import { mandelbrot } from './feats';
 <style>
 	#canvas {
 		border: 1px solid black;
+		background-color: aliceblue;
+		border-radius: 15px;
 	}
 
 	.box-status {

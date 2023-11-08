@@ -1,0 +1,25 @@
+{
+  "page": {
+    "home": {
+      "title": "Homepage",
+      "nav": "Home",
+      "article": {
+        "name": "HyeonMin Shin",
+        "subtitle": "Full Stack Developer",
+        "introduction": "Hello, my name is HyeonMin Shin.<br />I am a 24-year-old frontend developer with experience building complex user interfaces, managing state, and optimizing performance using React and React Native with TypeScript.<br />I live in Uijeongbu, South Korea,"
+      },
+      "button": {
+        "github": "GitHub",
+        "linkedIn": "LinkedIn"
+      }
+    },
+    "docs": {
+      "title": "Docs",
+      "nav": "Docs"
+    },
+    "lab": {
+      "title": "Lab",
+      "nav": "Lab"
+    }
+  }
+}
