@@ -1,7 +1,6 @@
 <script>
 	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcome_fallback from '$lib/images/svelte-welcome.png';
+	import avatar from '$lib/images/Avatar.png';
 </script>
 
 <svelte:head>
@@ -10,50 +9,56 @@
 </svelte:head>
 
 <section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" />
-			</picture>
-		</span>
+		<picture class="profile">
+			<img src={avatar} alt="Profile" />
+		</picture>
 
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
-
-	<Counter />
+		<article class="text-area">
+			<h1>HyeonMin Shin</h1>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione iure nisi ut magni ullam, eum ad quod! Dolores eligendi nobis ea adipisci, saepe, repudiandae voluptate voluptatem repellendus doloremque, quia vero.</p>
+		</article>
 </section>
 
 <style>
 	section {
 		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
-	}
-
-	h1 {
-		width: 100%;
-	}
-
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
-
-	.welcome img {
-		position: absolute;
 		width: 100%;
 		height: 100%;
-		top: 0;
-		display: block;
+		justify-content: center;
+		align-items: center;
+		gap: 2rem;
+
+		@media screen and (max-width: 640px) {
+			flex-direction: column;
+		}
 	}
+
+	.profile {
+		flex: 0.4;
+	}
+	.profile img {
+		max-width: 528px;
+		max-height: 528px;
+		width: 100%;
+	}
+
+	.text-area {
+		flex: 0.6;
+		display: flex;
+		flex-direction: column;
+
+		font-family: Poppins;
+		font-style: normal;
+		line-height: 35px; /* 50% */
+	}
+
+	.text-area h1 {
+		text-align: start;
+		margin: 0;
+		padding: 0;
+		font-size: clamp(2rem, 4vw, 3rem);
+		color: var(--subtitle-cool);
+		font-weight: bold;
+	}
+
 </style>

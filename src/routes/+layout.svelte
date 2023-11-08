@@ -1,6 +1,7 @@
 <script>
 	import Header from './Header.svelte';
 	import './styles.css';
+	import '$lib/fonts/fonts.css';
 </script>
 
 <div class="app">
@@ -10,8 +11,13 @@
 		<slot />
 	</main>
 
-	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
+	<footer >
+		<div >
+			<p>GitHub</p>
+			<p>Instagram</p>
+			<p>Youtube</p>
+		</div>
+		<p>© 2023 made by ShinMini, in Korea</p>
 	</footer>
 </div>
 
@@ -19,15 +25,16 @@
 	.app {
 		display: flex;
 		flex-direction: column;
-		min-height: 100vh;
+		height: 100vh;
+		background-color: #222222;
 	}
 
 	main {
-		flex: 1;
 		display: flex;
 		flex-direction: column;
 		padding: 1rem;
 		width: 100%;
+		height: 100%;
 		max-width: 64rem;
 		margin: 0 auto;
 		box-sizing: border-box;
@@ -35,19 +42,26 @@
 
 	footer {
 		display: flex;
-		flex-direction: column;
-		justify-content: center;
+		justify-content: space-between;
 		align-items: center;
-		padding: 12px;
+		box-sizing: content-box;
+		padding: clamp(12px, 1.2vw, 24px) clamp(24px, 2.4vw, 48px);
+
+		border-top: 2px solid #333;
+		color: rgba(255, 255, 255, 0.80);
+
+		font-family: Poppins;
+		font-size: clamp(8px, 1.2vw, 16px);
+		font-style: normal;
+		font-weight: 400;
+		line-height: 35px; /* 218.75% */
 	}
 
-	footer a {
+	footer div {
+		display: flex;
+		gap: 6px;
 		font-weight: bold;
-	}
 
-	@media (min-width: 480px) {
-		footer {
-			padding: 12px 0;
-		}
+		color: rgba(255, 255, 255, 0.50);
 	}
 </style>
