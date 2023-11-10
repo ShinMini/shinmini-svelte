@@ -38,6 +38,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"firebase": "^10.5.2",
 		"svelte-i18n": "^4.0.0"
 	}
 }

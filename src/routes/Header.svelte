@@ -22,8 +22,8 @@
 			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
 				<a href="/">{$_('page.home.nav', { default: 'Home' })}</a>
 			</li>
-			<li aria-current={$page.url.pathname === '/docs' ? 'page' : undefined}>
-				<a href="/docs">{$_('page.docs.nav', {default: 'Docs'})}</a>
+			<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
+				<a href="/about">{$_('page.about.nav', {default: 'About'})}</a>
 			</li>
 			<li aria-current={$page.url.pathname === '/mandelbrot' ? 'page' : undefined}>
 				<a href="/mandelbrot">{$_('page.lab.nav', {default: 'Lab'})}</a>

@@ -13,9 +13,9 @@
         "linkedIn": "링크드인"
       }
     },
-    "docs": {
-      "title": "문서",
-      "nav": "문서"
+    "about": {
+      "title": "상세히",
+      "nav": "상세히"
     },
     "lab" :{
       "title": "실험실",

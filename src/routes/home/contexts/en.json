@@ -13,9 +13,9 @@
         "linkedIn": "LinkedIn"
       }
     },
-    "docs": {
-      "title": "Docs",
-      "nav": "Docs"
+    "about": {
+      "title": "About",
+      "nav": "About"
     },
     "lab": {
       "title": "Lab",

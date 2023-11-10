@@ -8,6 +8,12 @@
 	--gray-text: #ACACAC;
 }
 
+body {
+	font-family: 'Fira Mono', monospace;
+	background-color: #1e1e1e;
+	color: white;
+}
+
 .btn {
 	min-width: 9rem;
 	box-sizing: border-box;
