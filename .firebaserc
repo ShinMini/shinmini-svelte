@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "shinmini-homepage"
-  }
+  },
+  "targets": {
+    "dev-shinmini": {
+      "hosting": {
+        "shinmini-homepage": [
+          "dev-shinmini"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }

@@ -1,20 +1,27 @@
-<script module lang="ts">
+<script lang="ts">
+	import { browser } from '$app/environment';
 	import { mandelbrot } from './feats';
 	import type { MandelbrotProps } from './feats';
 	import { onMount } from 'svelte';
 
-	let innerWidth = window.innerWidth;
+	let innerWidth: number;
 
 	onMount(() => {
 		function onResize() {
-			innerWidth = window.innerWidth;
+			innerWidth = (browser) ? window.innerWidth : 960;
 		}
-		window.addEventListener('resize', onResize);
-		return () =>
-			window.removeEventListener('resize', onResize);
+
+		const nextTick = setTimeout(() => {
+			onResize();
+			clearTimeout(nextTick);
+		}, 0);
+
+		addEventListener('resize', onResize);
+		addEventListener('load', () => onResize);
+		return () => removeEventListener('resize', onResize);
 	});
 
-	$: canvasWidth = innerWidth * 0.8;
+	$: canvasWidth = Math.round(Math.min((innerWidth * 0.8) || 360, 960));
 
 	let scale = 1;
 	let offset = {
@@ -98,9 +105,9 @@
 	<meta name="description" content="Canvas Playground" />
 </svelte:head>
 
-<section class="min-w-max min-h-max">
+<section class="min-w-max min-h-max overflow-x-clip mx-auto">
 	<h1 class="text-2xl poppins text-slate-200 font-bold">
-		Click Me! Width: {innerWidth}
+		Canvas width: {canvasWidth}
 	</h1>
 	<canvas
 		on:click={drawMandelbrot}

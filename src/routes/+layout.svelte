@@ -1,5 +1,5 @@
 <script>
-	import { scale, slide } from 'svelte/transition';
+	import { scale} from 'svelte/transition';
 	import Header from './Header.svelte';
 	import Footer from './Footer.svelte';
 

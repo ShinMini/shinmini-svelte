@@ -5,6 +5,6 @@
   const gradientText = 'font-extrabold text-transparent text-8xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 text-center m-auto';
 </script>
 
-<div out:blur={{opacity: 0.6, duration: 600}} class={gradientBlock}>
+<div transition:blur={{opacity: 0.6, duration: 600}} class={gradientBlock}>
 	<h1 class={gradientText}>Loading ... </h1>
 </div>

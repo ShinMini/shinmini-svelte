@@ -2,8 +2,9 @@
 	"name": "svelte",
 	"version": "0.0.1",
 	"scripts": {
+		"ci": "rm -rf node_modules && pnpm install",
 		"dev": "vite dev",
-		"build": "vite build",
+		"build": "vite build --mode production",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
@@ -38,7 +39,10 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@sveltejs/adapter-static": "^2.0.3",
 		"firebase": "^10.5.2",
+		"firebase-admin": "^11.11.0",
+		"rimraf": "^5.0.5",
 		"svelte-i18n": "^4.0.0"
 	}
 }
